@@ -1,21 +1,15 @@
 
-/************************************************************************/
-/*****  Modify Line 5 to replace 123456789 with your student UID  *******/
-/************************************************************************/
+
 %let UID=657758531;
 %let UID8=%substr(&UID., 1, 8);
 %put &UID. &UID8. ;
 
 
-/************************************************************************/
-/**  Modify the FILENAME statement to reference a valid file location  **/
-/************************************************************************/
+
 filename in1 'C:\Users\adity\OneDrive\Documents\UIC\sas\CodingExercise2\FINAL.csv' ;
 
 
-/****************************************************************************************/
-/**  Run lines 19-34 below to ccreate the individualized dataset you will use for the exam  **/
-/****************************************************************************************/
+
 data FINAL ;
 infile in1 delimiter=',' firstobs=2 missover ;
 format ID 6. CUSTOMER $20. AGE 4. INCOME dollar10.2 DATA_PLAN $2. VOICE_PLAN $2. MARKET $10. DEVICE_PRIMARY $8.
@@ -39,9 +33,7 @@ run ;
 ods pdf file='C:\Users\adity\OneDrive\Documents\UIC\sas\CodingExercise2\IDS462FINAL.pdf';
 
 
-/****************************************************************************************/
-/*** Write SAS program code for the coding exercise below *******************************/
-/****************************************************************************************/
+
 
 
 PROC MEANS DATA=final MEAN MIN MAX STDDEV ;
